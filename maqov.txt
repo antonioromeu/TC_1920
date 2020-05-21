@@ -1,0 +1,140 @@
+start ___ ___ *** accept
+start *__ *__ *** reject
+start Q__ Q__ r** q1
+
+q1 0__ 01_ rr* q1
+q1 1__ 11_ rr* q1
+q1 2__ 21_ rr* q1
+q1 3__ 31_ rr* q1
+q1 4__ 41_ rr* q1
+q1 5__ 51_ rr* q1
+q1 6__ 61_ rr* q1
+q1 7__ 71_ rr* q1
+q1 8__ 81_ rr* q1
+q1 9__ 91_ rr* q1
+q1 A__ A__ rl* a1
+
+a1 0*_ 0*1 r*r a1
+a1 1*_ 1*1 r*r a1
+a1 2*_ 2*1 r*r a1
+a1 3*_ 3*1 r*r a1
+a1 4*_ 4*1 r*r a1
+a1 5*_ 5*1 r*r a1
+a1 6*_ 6*1 r*r a1
+a1 7*_ 7*1 r*r a1
+a1 8*_ 8*1 r*r a1
+a1 9*_ 9*1 r*r a1
+a1 Q*_ Q*_ r*l q2
+a1 Y*_ Y*_ rll foundy
+a1 N*_ N*_ rll foundn
+
+foundy Y1_ Y1_ rl* foundy
+foundy A__ A__ rs* a2
+
+foundn N1_ N1_ rl* foundn
+foundn A__ A__ rs* a2
+
+q2 01* 01* rl* q2
+q2 11* 11* rl* q2
+q2 21* 21* rl* q2
+q2 31* 31* rl* q2
+q2 41* 41* rl* q2
+q2 51* 51* rl* q2
+q2 61* 61* rl* q2
+q2 71* 71* rl* q2
+q2 81* 81* rl* q2
+q2 91* 91* rl* q2
+q2 A_* A_* rs* a2
+
+q2 0_* 0_* *** reject
+q2 1_* 1_* *** reject
+q2 2_* 2_* *** reject
+q2 3_* 3_* *** reject
+q2 4_* 4_* *** reject
+q2 5_* 5_* *** reject
+q2 6_* 6_* *** reject
+q2 7_* 7_* *** reject
+q2 8_* 8_* *** reject
+q2 9_* 9_* *** reject
+
+q2 *1* *1* *** reject
+
+a2 0*1 0*1 r*l a2
+a2 1*1 1*1 r*l a2
+a2 2*1 2*1 r*l a2
+a2 3*1 3*1 r*l a2
+a2 4*1 4*1 r*l a2
+a2 5*1 5*1 r*l a2
+a2 6*1 6*1 r*l a2
+a2 7*1 7*1 r*l a2
+a2 8*1 8*1 r*l a2
+a2 9*1 9*1 r*l a2
+
+a2 R** R** r*s foundletter
+a2 L** L** r*s foundletter
+a2 S** S** r*s foundletter
+
+a2 0*_ 0*_ *** reject
+a2 1*_ 1*_ *** reject
+a2 2*_ 2*_ *** reject
+a2 3*_ 3*_ *** reject
+a2 4*_ 4*_ *** reject
+a2 5*_ 5*_ *** reject
+a2 6*_ 6*_ *** reject
+a2 7*_ 7*_ *** reject
+a2 8*_ 8*_ *** reject
+a2 9*_ 9*_ *** reject
+
+a2 *_1 *_1 *** reject
+
+foundletter ;** ;** r** restart
+foundletter *** *** *** reject
+foundletter _** _** *** accept 
+
+restart *__ *__ *** reject
+restart Q__ Q__ r** newq1
+
+newq1 01_ 01_ rr* newq1
+newq1 11_ 11_ rr* newq1
+newq1 21_ 21_ rr* newq1
+newq1 31_ 31_ rr* newq1
+newq1 41_ 41_ rr* newq1
+newq1 51_ 51_ rr* newq1
+newq1 61_ 61_ rr* newq1
+newq1 71_ 71_ rr* newq1
+newq1 81_ 81_ rr* newq1
+newq1 91_ 91_ rr* newq1
+newq1 A__ A__ rl* newa1
+
+newa1 0*1 0*1 r*r newa1
+newa1 1*1 1*1 r*r newa1
+newa1 2*1 2*1 r*r newa1
+newa1 3*1 3*1 r*r newa1
+newa1 4*1 4*1 r*r newa1
+newa1 5*1 5*1 r*r newa1
+newa1 6*1 6*1 r*r newa1
+newa1 7*1 7*1 r*r newa1
+newa1 8*1 8*1 r*r newa1
+newa1 9*1 9*1 r*r newa1
+newa1 Q*_ Q*_ r** q2
+newa1 Y*_ Y*_ rll foundy
+newa1 N*_ N*_ rll foundn
+
+accept *** *** *** halt-accept
+reject *** *** *** halt-reject
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
