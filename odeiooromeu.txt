@@ -1,0 +1,247 @@
+
+start 0______ 00_____ rr***** start
+start 1______ 11_____ rr***** start
+start 2______ 22_____ rr***** start
+start 3______ 33_____ rr***** start
+start 4______ 44_____ rr***** start
+start 5______ 55_____ rr***** start
+start 6______ 66_____ rr***** start
+start 7______ 77_____ rr***** start
+start 8______ 88_____ rr***** start
+start 9______ 99_____ rr***** start
+start Q______ QQ_____ rr***** start
+start A______ AA_____ rr***** start
+start R______ RR_____ rr***** start
+start S______ SS_____ rr***** start
+start L______ LL_____ rr***** start
+start Y______ YY_____ rr***** start
+start N______ NN_____ rr***** start
+start ;______ ;;_____ rr***** start
+start $*_____ $*_____ rl***** btmachine
+
+btmachine ******* ******* *l***** btmachine
+btmachine *_***** ******* *r***** checkmachine
+
+checkmachine *______ *______ ******* copyinput
+checkmachine **_____ **_____ ******* halt-reject
+checkmachine *Q_____ *Q_____ *r***** q1
+
+q1 *0_____ *01____ *rr**** q1
+q1 *1_____ *11____ *rr**** q1
+q1 *2_____ *21____ *rr**** q1
+q1 *3_____ *31____ *rr**** q1
+q1 *4_____ *41____ *rr**** q1
+q1 *5_____ *51____ *rr**** q1
+q1 *6_____ *61____ *rr**** q1
+q1 *7_____ *71____ *rr**** q1
+q1 *8_____ *81____ *rr**** q1
+q1 *9_____ *91____ *rr**** q1
+q1 *A_____ *A_____ *rl**** a1
+
+a1 *0*____ *0*1___ *r*r*** a1
+a1 *1*____ *1*1___ *r*r*** a1
+a1 *2*____ *2*1___ *r*r*** a1
+a1 *3*____ *3*1___ *r*r*** a1
+a1 *4*____ *4*1___ *r*r*** a1
+a1 *5*____ *5*1___ *r*r*** a1
+a1 *6*____ *6*1___ *r*r*** a1
+a1 *7*____ *7*1___ *r*r*** a1
+a1 *8*____ *8*1___ *r*r*** a1
+a1 *9*____ *9*1___ *r*r*** a1
+a1 *Q*____ *Q*____ *r*l*** q2
+a1 *Y**___ *Y**___ *r*l*** foundy
+a1 *N**___ *N**___ *r*l*** foundn
+
+a1 ******* ******* ******* halt-reject
+
+foundy *Y1*___ *Y1*___ *rl**** foundy
+foundy *Y_*___ *Y_*___ *rs**** halt-reject
+foundy **1*___ **1*___ *rs**** halt-reject
+foundy *A_1___ *A_1___ *rr**** a2
+
+foundn *N1*___ *N1*___ *rl**** foundn
+foundn **1*___ **1*___ *rs**** halt-reject
+foundn *N_*___ *N_*___ *rs**** halt-reject
+foundn *A_1___ *A_1___ *rr**** a2
+
+q2 *01**** *01**** *rl**** q2
+q2 *11**** *11**** *rl**** q2
+q2 *21**** *21**** *rl**** q2
+q2 *31**** *31**** *rl**** q2
+q2 *41**** *41**** *rl**** q2
+q2 *51**** *51**** *rl**** q2
+q2 *61**** *61**** *rl**** q2
+q2 *71**** *71**** *rl**** q2
+q2 *81**** *81**** *rl**** q2
+q2 *91**** *91**** *rl**** q2
+q2 *A_**** *A_**** *rr**** a2
+
+q2 *0_**** *0_**** ******* halt-reject
+q2 *1_**** *1_**** ******* halt-reject
+q2 *2_**** *2_**** ******* halt-reject
+q2 *3_**** *3_**** ******* halt-reject
+q2 *4_**** *4_**** ******* halt-reject
+q2 *5_**** *5_**** ******* halt-reject
+q2 *6_**** *6_**** ******* halt-reject
+q2 *7_**** *7_**** ******* halt-reject
+q2 *8_**** *8_**** ******* halt-reject
+q2 *9_**** *9_**** ******* halt-reject
+
+q2 **1**** **1**** ******* halt-reject
+
+a2 *0*1*** *0*1*** *r*l*** a2
+a2 *1*1*** *1*1*** *r*l*** a2
+a2 *2*1*** *2*1*** *r*l*** a2
+a2 *3*1*** *3*1*** *r*l*** a2
+a2 *4*1*** *4*1*** *r*l*** a2
+a2 *5*1*** *5*1*** *r*l*** a2
+a2 *6*1*** *6*1*** *r*l*** a2
+a2 *7*1*** *7*1*** *r*l*** a2
+a2 *8*1*** *8*1*** *r*l*** a2
+a2 *9*1*** *9*1*** *r*l*** a2
+
+a2 *R*_*** *R*_*** *r*r*** foundletter
+a2 *L*_*** *L*_*** *r*r*** foundletter
+a2 *S*_*** *S*_*** *r*r*** foundletter
+
+a2 *R*1*** *R*1*** *r*r*** halt-reject
+a2 *L*1*** *L*1*** *r*r*** halt-reject
+a2 *S*1*** *S*1*** *r*r*** halt-reject
+
+a2 *0*_*** *0*_*** ******* halt-reject
+a2 *1*_*** *1*_*** ******* halt-reject
+a2 *2*_*** *2*_*** ******* halt-reject
+a2 *3*_*** *3*_*** ******* halt-reject
+a2 *4*_*** *4*_*** ******* halt-reject
+a2 *5*_*** *5*_*** ******* halt-reject
+a2 *6*_*** *6*_*** ******* halt-reject
+a2 *7*_*** *7*_*** ******* halt-reject
+a2 *8*_*** *8*_*** ******* halt-reject
+a2 *9*_*** *9*_*** ******* halt-reject
+
+a2 **_1*** **_1*** ******* reject
+
+foundletter *;***** *;***** *r***** restart
+foundletter ******* ******* ******* halt-reject
+foundletter *_***** *_***** *l***** copyinput 
+
+restart ******* ******* ******* halt-reject
+restart *Q***** *Q***** *r***** newq1
+
+newq1 *01**** *01**** *rr**** newq1
+newq1 *11**** *11**** *rr**** newq1
+newq1 *21**** *21**** *rr**** newq1
+newq1 *31**** *31**** *rr**** newq1
+newq1 *41**** *41**** *rr**** newq1
+newq1 *51**** *51**** *rr**** newq1
+newq1 *61**** *61**** *rr**** newq1
+newq1 *71**** *71**** *rr**** newq1
+newq1 *81**** *81**** *rr**** newq1
+newq1 *91**** *91**** *rr**** newq1
+newq1 *A***** *A***** *rl**** newa1
+
+newq1 *0_**** *0_**** ******* halt-reject
+newq1 *1_**** *1_**** ******* halt-reject
+newq1 *2_**** *2_**** ******* halt-reject
+newq1 *3_**** *3_**** ******* halt-reject
+newq1 *4_**** *4_**** ******* halt-reject
+newq1 *5_**** *5_**** ******* halt-reject
+newq1 *6_**** *6_**** ******* halt-reject
+newq1 *7_**** *7_**** ******* halt-reject
+newq1 *8_**** *8_**** ******* halt-reject
+newq1 *9_**** *9_**** ******* halt-reject
+newq1 *A1**** *A1**** ******* halt-reject
+
+newa1 *0*1*** *0*1*** *r*r*** newa1
+newa1 *1*1*** *1*1*** *r*r*** newa1
+newa1 *2*1*** *2*1*** *r*r*** newa1
+newa1 *3*1*** *3*1*** *r*r*** newa1
+newa1 *4*1*** *4*1*** *r*r*** newa1
+newa1 *5*1*** *5*1*** *r*r*** newa1
+newa1 *6*1*** *6*1*** *r*r*** newa1
+newa1 *7*1*** *7*1*** *r*r*** newa1
+newa1 *8*1*** *8*1*** *r*r*** newa1
+newa1 *9*1*** *9*1*** *r*r*** newa1
+newa1 *Q***** *Q***** *r*l*** q2
+newa1 *Y***** *Y***** *r*l*** foundy
+newa1 *N***** *N***** *r*l*** foundn
+
+
+
+
+copyinput 0***__* 0***0_* r***r** copyinput
+copyinput 1***__* 1***1_* r***r** copyinput
+copyinput 2***__* 2***2_* r***r** copyinput
+copyinput 3***__* 3***3_* r***r** copyinput
+copyinput 4***__* 4***4_* r***r** copyinput
+copyinput 5***__* 5***5_* r***r** copyinput
+copyinput 6***__* 6***6_* r***r** copyinput
+copyinput 7***__* 7***7_* r***r** copyinput
+copyinput 8***__* 8***8_* r***r** copyinput
+copyinput 9***__* 9***9_* r***r** copyinput
+copyinput A***__* A***A_* r***r** copyinput
+copyinput _***__* _***__* s***l** checkinput
+
+checkinput ***10** ***10** ***rl** checkinput
+checkinput ***11** ***11** ***rl** checkinput
+checkinput ***12** ***12** ***rl** checkinput
+checkinput ***13** ***13** ***rl** checkinput
+checkinput ***14** ***14** ***rl** checkinput
+checkinput ***15** ***15** ***rl** checkinput
+checkinput ***16** ***16** ***rl** checkinput
+checkinput ***17** ***17** ***rl** checkinput
+checkinput ***18** ***18** ***rl** checkinput
+checkinput ***19** ***19** ***rl** checkinput
+checkinput ****_** ****_** ****r** bt2
+checkinput ***_A** ***_A** ***ll** bt1
+
+checkinput ***1A** ***1A** ******* halt-reject
+checkinput ***_0** ***_0** ******* halt-reject
+checkinput ***_1** ***_1** ******* halt-reject
+checkinput ***_2** ***_2** ******* halt-reject
+checkinput ***_3** ***_3** ******* halt-reject
+checkinput ***_4** ***_4** ******* halt-reject
+checkinput ***_5** ***_6** ******* halt-reject
+checkinput ***_7** ***_7** ******* halt-reject
+checkinput ***_8** ***_8** ******* halt-reject
+checkinput ***_9** ***_9** ******* halt-reject
+
+bt1 ***1*** ***1*** ***l*** bt1
+bt1 ***_*** ***_*** ***r*** checkinput
+
+bt2 *0***** *0***** *l***** bt2
+bt2 *1***** *1***** *l***** bt2
+bt2 *2***** *2***** *l***** bt2
+bt2 *3***** *3***** *l***** bt2
+bt2 *4***** *4***** *l***** bt2
+bt2 *5***** *5***** *l***** bt2
+bt2 *6***** *6***** *l***** bt2
+bt2 *7***** *7***** *l***** bt2
+bt2 *8***** *8***** *l***** bt2
+bt2 *9***** *9***** *l***** bt2
+bt2 *Q***** *Q***** *l***** bt2
+bt2 *A***** *A***** *l***** bt2
+bt2 *;***** *;***** *l***** bt2
+bt2 *R***** *R***** *l***** bt2
+bt2 *L***** *L***** *l***** bt2
+bt2 *S***** *S***** *l***** bt2
+bt2 *Y***** *Y***** *l***** bt2
+bt2 *N***** *N***** *l***** bt2
+bt2 *_***_* *_***Q* *r***r* copyQ0
+
+copyQ0 **1**_* **1**0* **r**r* copyQ0
+copyQ0 **_**_* **_**_* **l**l* bt6
+
+bt6 *****Q* *****Q* *****s* processinput
+bt6 *****0* *****0* *****l* bt6
+
+
+
+
+
+
+
+
+
+
+

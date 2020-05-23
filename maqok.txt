@@ -1,5 +1,5 @@
-start ___ ___ *** accept
-start *__ *__ *** reject
+start ___ ___ *** halt-accept
+start *__ *__ *** halt-reject
 start Q__ Q__ r** q1
 
 q1 0__ 01_ rr* q1
@@ -31,13 +31,13 @@ a1 N** N** r*l foundn
 a1 *** *** *** halt-reject
 
 foundy Y1* Y1* rl* foundy
-foundy Y_* Y_* rs* reject
-foundy *1* *1* rs* reject
+foundy Y_* Y_* rs* halt-reject
+foundy *1* *1* rs* halt-reject
 foundy A_1 A_1 rr* a2
 
 foundn N1* N1* rl* foundn
-foundn *1* *1* rs* reject
-foundn N_* N_* rs* reject
+foundn *1* *1* rs* halt-reject
+foundn N_* N_* rs* halt-reject
 foundn A_1 A_1 rr* a2
 
 q2 01* 01* rl* q2
@@ -52,18 +52,18 @@ q2 81* 81* rl* q2
 q2 91* 91* rl* q2
 q2 A_* A_* rr* a2
 
-q2 0_* 0_* *** reject
-q2 1_* 1_* *** reject
-q2 2_* 2_* *** reject
-q2 3_* 3_* *** reject
-q2 4_* 4_* *** reject
-q2 5_* 5_* *** reject
-q2 6_* 6_* *** reject
-q2 7_* 7_* *** reject
-q2 8_* 8_* *** reject
-q2 9_* 9_* *** reject
+q2 0_* 0_* *** halt-reject
+q2 1_* 1_* *** halt-reject
+q2 2_* 2_* *** halt-reject
+q2 3_* 3_* *** halt-reject
+q2 4_* 4_* *** halt-reject
+q2 5_* 5_* *** halt-reject
+q2 6_* 6_* *** halt-reject
+q2 7_* 7_* *** halt-reject
+q2 8_* 8_* *** halt-reject
+q2 9_* 9_* *** halt-reject
 
-q2 *1* *1* *** reject
+q2 *1* *1* *** halt-reject
 
 a2 0*1 0*1 r*l a2
 a2 1*1 1*1 r*l a2
@@ -84,22 +84,22 @@ a2 R*1 R*1 r*r halt-reject
 a2 L*1 L*1 r*r halt-reject
 a2 S*1 S*1 r*r halt-reject
 
-a2 0*_ 0*_ *** reject
-a2 1*_ 1*_ *** reject
-a2 2*_ 2*_ *** reject
-a2 3*_ 3*_ *** reject
-a2 4*_ 4*_ *** reject
-a2 5*_ 5*_ *** reject
-a2 6*_ 6*_ *** reject
-a2 7*_ 7*_ *** reject
-a2 8*_ 8*_ *** reject
-a2 9*_ 9*_ *** reject
+a2 0*_ 0*_ *** halt-reject
+a2 1*_ 1*_ *** halt-reject
+a2 2*_ 2*_ *** halt-reject
+a2 3*_ 3*_ *** halt-reject
+a2 4*_ 4*_ *** halt-reject
+a2 5*_ 5*_ *** halt-reject
+a2 6*_ 6*_ *** halt-reject
+a2 7*_ 7*_ *** halt-reject
+a2 8*_ 8*_ *** halt-reject
+a2 9*_ 9*_ *** halt-reject
 
 a2 *_1 *_1 *** reject
 
 foundletter ;** ;** r** restart
-foundletter *** *** *** reject
-foundletter _** _** *** accept 
+foundletter *** *** *** halt-reject
+foundletter _** _** *** halt-accept 
 
 restart *** *** *** halt-reject
 restart Q** Q** r** newq1
@@ -141,22 +141,3 @@ newa1 9*1 9*1 r*r newa1
 newa1 Q** Q** r*l q2
 newa1 Y** Y** r*l foundy
 newa1 N** N** r*l foundn
-
-accept *** *** *** halt-accept
-reject *** *** *** halt-reject
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
