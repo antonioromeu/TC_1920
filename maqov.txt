@@ -25,14 +25,14 @@ a1 7*_ 7*1 r*r a1
 a1 8*_ 8*1 r*r a1
 a1 9*_ 9*1 r*r a1
 a1 Q*_ Q*_ r*l q2
-a1 Y*_ Y*_ rll foundy
-a1 N*_ N*_ rll foundn
+a1 Y** Y** r*l foundy
+a1 N** N** r*l foundn
 
-foundy Y1_ Y1_ rl* foundy
-foundy A__ A__ rs* a2
+foundy Y1* Y1* rl* foundy
+foundy A** A** rr* a2
 
-foundn N1_ N1_ rl* foundn
-foundn A__ A__ rs* a2
+foundn N1* N1* rl* foundn
+foundn A** A** rr* a2
 
 q2 01* 01* rl* q2
 q2 11* 11* rl* q2
@@ -44,7 +44,7 @@ q2 61* 61* rl* q2
 q2 71* 71* rl* q2
 q2 81* 81* rl* q2
 q2 91* 91* rl* q2
-q2 A_* A_* rs* a2
+q2 A_* A_* rr* a2
 
 q2 0_* 0_* *** reject
 q2 1_* 1_* *** reject
@@ -70,9 +70,9 @@ a2 7*1 7*1 r*l a2
 a2 8*1 8*1 r*l a2
 a2 9*1 9*1 r*l a2
 
-a2 R** R** r*s foundletter
-a2 L** L** r*s foundletter
-a2 S** S** r*s foundletter
+a2 R** R** r*r foundletter
+a2 L** L** r*r foundletter
+a2 S** S** r*r foundletter
 
 a2 0*_ 0*_ *** reject
 a2 1*_ 1*_ *** reject
@@ -92,19 +92,19 @@ foundletter *** *** *** reject
 foundletter _** _** *** accept 
 
 restart *__ *__ *** reject
-restart Q__ Q__ r** newq1
+restart Q** Q** r** newq1
 
-newq1 01_ 01_ rr* newq1
-newq1 11_ 11_ rr* newq1
-newq1 21_ 21_ rr* newq1
-newq1 31_ 31_ rr* newq1
-newq1 41_ 41_ rr* newq1
-newq1 51_ 51_ rr* newq1
-newq1 61_ 61_ rr* newq1
-newq1 71_ 71_ rr* newq1
-newq1 81_ 81_ rr* newq1
-newq1 91_ 91_ rr* newq1
-newq1 A__ A__ rl* newa1
+newq1 01* 01* rr* newq1
+newq1 11* 11* rr* newq1
+newq1 21* 21* rr* newq1
+newq1 31* 31* rr* newq1
+newq1 41* 41* rr* newq1
+newq1 51* 51* rr* newq1
+newq1 61* 61* rr* newq1
+newq1 71* 71* rr* newq1
+newq1 81* 81* rr* newq1
+newq1 91* 91* rr* newq1
+newq1 A** A** rl* newa1
 
 newa1 0*1 0*1 r*r newa1
 newa1 1*1 1*1 r*r newa1
@@ -116,9 +116,9 @@ newa1 6*1 6*1 r*r newa1
 newa1 7*1 7*1 r*r newa1
 newa1 8*1 8*1 r*r newa1
 newa1 9*1 9*1 r*r newa1
-newa1 Q*_ Q*_ r** q2
-newa1 Y*_ Y*_ rll foundy
-newa1 N*_ N*_ rll foundn
+newa1 Q** Q** r*l q2
+newa1 Y** Y** r*l foundy
+newa1 N** N** r*l foundn
 
 accept *** *** *** halt-accept
 reject *** *** *** halt-reject
