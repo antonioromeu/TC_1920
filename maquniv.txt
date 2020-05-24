@@ -232,16 +232,72 @@ bt2 *_***_* *_***Q* *r***r* copyQ0
 copyQ0 **1**_* **1**0* **r**r* copyQ0
 copyQ0 **_**_* **_**_* **l**l* bt6
 
-bt6 *****Q* *****Q* *****s* processinput
+bt6 *****Q* *****Q* *****s* findQinit
 bt6 *****0* *****0* *****l* bt6
+bt6 *****1* *****1* *****l* bt6
+bt6 *****2* *****2* *****l* bt6
+bt6 *****3* *****3* *****l* bt6
+bt6 *****4* *****4* *****l* bt6
+bt6 *****5* *****5* *****l* bt6
+bt6 *****6* *****6* *****l* bt6
+bt6 *****7* *****7* *****l* bt6
+bt6 *****8* *****8* *****l* bt6
+bt6 *****9* *****9* *****l* bt6
 
+findQinit *Q***Q* *Q***Q* *r***r* loopQ
 
+loopQ *0***0* *0***0* *r***r* loopQ
+loopQ *1***1* *1***1* *r***r* loopQ
+loopQ *2***2* *2***2* *r***r* loopQ
+loopQ *3***3* *3***3* *r***r* loopQ
+loopQ *4***4* *4***4* *r***r* loopQ
+loopQ *5***5* *5***5* *r***r* loopQ
+loopQ *6***6* *6***6* *r***r* loopQ
+loopQ *7***7* *7***7* *r***r* loopQ
+loopQ *8***8* *8***8* *r***r* loopQ
+loopQ *9***9* *9***9* *r***r* loopQ
+loopQ *A**A_* *A**A_* *r**rl* loopA
+loopQ *****_* *****_* *****l* bt6
 
+loopA *0**0** *0**0** *r**r** loopA
+loopA *1**1** *1**1** *r**r** loopA
+loopA *2**2** *2**2** *r**r** loopA
+loopA *3**3** *3**3** *r**r** loopA
+loopA *4**4** *4**4** *r**r** loopA
+loopA *5**5** *5**5** *r**r** loopA
+loopA *6**6** *6**6** *r**r** loopA
+loopA *7**7** *7**7** *r**r** loopA
+loopA *8**8** *8**8** *r**r** loopA
+loopA *9**9** *9**9** *r**r** loopA
+loopA *A**A** *A**A** *r**r** loopA
 
+loopA *Q**A** *Q**A** *r***** bt6
+loopA ******* ******* ******* bt5
+loopA *_***** *_***** ******* halt-reject
 
+bt5 ***10** ***10** ***rl** bt5
+bt5 ***11** ***11** ***rl** bt5
+bt5 ***12** ***12** ***rl** bt5
+bt5 ***13** ***13** ***rl** bt5
+bt5 ***14** ***14** ***rl** bt5
+bt5 ***15** ***15** ***rl** bt5
+bt5 ***16** ***16** ***rl** bt5
+bt5 ***17** ***17** ***rl** bt5
+bt5 ***18** ***18** ***rl** bt5
+bt5 ***19** ***19** ***rl** bt5
+bt5 ***_A** ***_A** ***ls** advanceTrans
 
+advanceTrans *;***** *;***** *r***** bt6
+advanceTrans ******* ******* *r***** advanceTrans
+advanceTrans *_***** *_***** ******* halt-reject
 
-
-
-
-
+writeNextQ *0***** *0***0* *r***r* writeNextQ
+writeNextQ *1***** *1***1* *r***r* writeNextQ
+writeNextQ *2***** *2***2* *r***r* writeNextQ
+writeNextQ *3***** *3***3* *r***r* writeNextQ
+writeNextQ *4***** *4***4* *r***r* writeNextQ
+writeNextQ *5***** *5***5* *r***r* writeNextQ
+writeNextQ *6***** *6***6* *r***r* writeNextQ
+writeNextQ *7***** *7***7* *r***r* writeNextQ
+writeNextQ *8***** *8***8* *r***r* writeNextQ
+writeNextQ *9***** *9***9* *r***r* writeNextQ
