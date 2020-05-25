@@ -256,24 +256,27 @@ loopQ *6***6* *6***6* *r***r* loopQ
 loopQ *7***7* *7***7* *r***r* loopQ
 loopQ *8***8* *8***8* *r***r* loopQ
 loopQ *9***9* *9***9* *r***r* loopQ
-loopQ *A**A_* *A**A_* *r**rl* loopA
+loopQ ******* ******* ******* advanceTrans
+loopQ *A**A_* *A**A_* *r**rl* verifyA
 loopQ *****_* *****_* *****l* bt6
 
-loopA *0**0** *0**0** *r**r** loopA
-loopA *1**1** *1**1** *r**r** loopA
-loopA *2**2** *2**2** *r**r** loopA
-loopA *3**3** *3**3** *r**r** loopA
-loopA *4**4** *4**4** *r**r** loopA
-loopA *5**5** *5**5** *r**r** loopA
-loopA *6**6** *6**6** *r**r** loopA
-loopA *7**7** *7**7** *r**r** loopA
-loopA *8**8** *8**8** *r**r** loopA
-loopA *9**9** *9**9** *r**r** loopA
-loopA *A**A** *A**A** *r**r** loopA
+verifyA *0**0** *0**0** *r*rr** verifyA
+verifyA *1**1** *1**1** *r*rr** verifyA
+verifyA *2**2** *2**2** *r*rr** verifyA
+verifyA *3**3** *3**3** *r*rr** verifyA
+verifyA *4**4** *4**4** *r*rr** verifyA
+verifyA *5**5** *5**5** *r*rr** verifyA
+verifyA *6**6** *6**6** *r*rr** verifyA
+verifyA *7**7** *7**7** *r*rr** verifyA
+verifyA *8**8** *8**8** *r*rr** verifyA
+verifyA *9**9** *9**9** *r*rr** verifyA
+verifyA *A**A** *A**A** *r**r** verifyA
 
-loopA *Q**A** *Q**A** *r***** bt6
-loopA ******* ******* ******* bt5
-loopA *_***** *_***** ******* halt-reject
+
+verifyA ******* ******* ******* bt5
+verifyA *Q**_** *Q**_** *s**sl* bt6exclusive
+verifyA *Q**A** *Q**A** *s**sl* bt6exclusive
+verifyA *_***** *_***** ******* halt-reject
 
 bt5 ***10** ***10** ***rl** bt5
 bt5 ***11** ***11** ***rl** bt5
@@ -287,7 +290,7 @@ bt5 ***18** ***18** ***rl** bt5
 bt5 ***19** ***19** ***rl** bt5
 bt5 ***_A** ***_A** ***ls** advanceTrans
 
-advanceTrans *;***** *;***** *r***** bt6
+advanceTrans *;***** *;***** *s***** bt6exclusive
 advanceTrans ******* ******* *r***** advanceTrans
 advanceTrans *_***** *_***** ******* halt-reject
 
@@ -301,3 +304,75 @@ writeNextQ *6***** *6***6* *r***r* writeNextQ
 writeNextQ *7***** *7***7* *r***r* writeNextQ
 writeNextQ *8***** *8***8* *r***r* writeNextQ
 writeNextQ *9***** *9***9* *r***r* writeNextQ
+writeNextQ *A***** *A***** *s***** verifyA
+writeNextQ *A*_*_* *A*_*_A *r*l*sr writeNextA
+ 
+
+bt6exclusive *Q***Q* *Q***Q* *r***r* writeNextQ
+bt6exclusive *;***Q* *;***Q* *r***s* loopQexclusive
+bt6exclusive *_***Q* *_***Q* *r***r* loopQexclusive
+bt6exclusive *****0* *****0* *****l* bt6exclusive
+bt6exclusive *****1* *****1* *****l* bt6exclusive
+bt6exclusive *****2* *****2* *****l* bt6exclusive
+bt6exclusive *****3* *****3* *****l* bt6exclusive
+bt6exclusive *****4* *****4* *****l* bt6exclusive
+bt6exclusive *****5* *****5* *****l* bt6exclusive
+bt6exclusive *****6* *****6* *****l* bt6exclusive
+bt6exclusive *****7* *****7* *****l* bt6exclusive
+bt6exclusive *****8* *****8* *****l* bt6exclusive
+bt6exclusive *****9* *****9* *****l* bt6exclusive
+bt6exclusive *_***Q* *_***Q* *r***r* loopQexclusive
+
+
+loopQexclusive *Q***Q* *Q***Q* *r***r* loopQexclusive
+loopQexclusive *0***0* *0***0* *r***r* loopQexclusive
+loopQexclusive *1***1* *1***1* *r***r* loopQexclusive
+loopQexclusive *2***2* *2***2* *r***r* loopQexclusive
+loopQexclusive *3***3* *3***3* *r***r* loopQexclusive
+loopQexclusive *4***4* *4***4* *r***r* loopQexclusive
+loopQexclusive *5***5* *5***5* *r***r* loopQexclusive
+loopQexclusive *6***6* *6***6* *r***r* loopQexclusive
+loopQexclusive *7***7* *7***7* *r***r* loopQexclusive
+loopQexclusive *8***8* *8***8* *r***r* loopQexclusive
+loopQexclusive *9***9* *9***9* *r***r* loopQexclusive
+loopQexclusive ******* ******* ******* advanceTrans
+loopQexclusive *A**A_* *A**A_* *r**rl* verifyA
+loopQexclusive *****_* *****_* *****l* bt6
+
+
+
+writeNextA *0***** *0****0 *r****r writeNextA
+writeNextA *1***** *1****1 *r****r writeNextA
+writeNextA *2***** *2****2 *r****r writeNextA
+writeNextA *3***** *3****3 *r****r writeNextA
+writeNextA *4***** *4****4 *r****r writeNextA
+writeNextA *5***** *5****5 *r****r writeNextA
+writeNextA *6***** *6****6 *r****r writeNextA
+writeNextA *7***** *7****7 *r****r writeNextA
+writeNextA *8***** *8****8 *r****r writeNextA
+writeNextA *9***** *9****9 *r****r writeNextA
+writeNextA *R***** *R***** *s***** moveRight
+writeNextA *L***** *L***** *s***** moveLeft
+writeNextA *S***** *S***** *s***** moveStay
+
+moveRight  ******* ******* ******* bt2exclusive
+
+bt2exclusive *0***** *0***** *l***** bt2exclusive
+bt2exclusive *1***** *1***** *l***** bt2exclusive
+bt2exclusive *2***** *2***** *l***** bt2exclusive
+bt2exclusive *3***** *3***** *l***** bt2exclusive
+bt2exclusive *4***** *4***** *l***** bt2exclusive
+bt2exclusive *5***** *5***** *l***** bt2exclusive
+bt2exclusive *6***** *6***** *l***** bt2exclusive
+bt2exclusive *7***** *7***** *l***** bt2exclusive
+bt2exclusive *8***** *8***** *l***** bt2exclusive
+bt2exclusive *9***** *9***** *l***** bt2exclusive
+bt2exclusive *Q***** *Q***** *l***** bt2exclusive
+bt2exclusive *A***** *A***** *l***** bt2exclusive
+bt2exclusive *;***** *;***** *l***** bt2exclusive
+bt2exclusive *R***** *R***** *l***** bt2exclusive
+bt2exclusive *L***** *L***** *l***** bt2exclusive
+bt2exclusive *S***** *S***** *l***** bt2exclusive
+bt2exclusive *Y***** *Y***** *l***** bt2exclusive
+bt2exclusive *N***** *N***** *l***** bt2exclusive
+bt2exclusive *_***_* *_***_* *s***l* bt6exclusive
