@@ -23,7 +23,7 @@ btmachine ******* ******* *l***** btmachine
 btmachine *_***** ******* *r***** checkmachine
 
 checkmachine *______ *______ ******* copyinput
-checkmachine **_____ **_____ ******* halt-reject
+checkmachine **_____ **_____ ******* halt
 checkmachine *Q_____ *Q_____ *r***** q1
 
 q1 *0_____ *01____ *rr**** q1
@@ -52,16 +52,16 @@ a1 *Q*____ *Q*____ *r*l*** q2
 a1 *Y**___ *Y**___ *r*l*** foundy
 a1 *N**___ *N**___ *r*l*** foundn
 
-a1 ******* ******* ******* halt-reject
+a1 ******* ******* ******* halt
 
 foundy *Y1*___ *Y1*___ *rl**** foundy
-foundy *Y_*___ *Y_*___ *rs**** halt-reject
-foundy **1*___ **1*___ *rs**** halt-reject
+foundy *Y_*___ *Y_*___ *rs**** halt
+foundy **1*___ **1*___ *rs**** halt
 foundy *A_1___ *A_1___ *rr**** a2
 
 foundn *N1*___ *N1*___ *rl**** foundn
-foundn **1*___ **1*___ *rs**** halt-reject
-foundn *N_*___ *N_*___ *rs**** halt-reject
+foundn **1*___ **1*___ *rs**** halt
+foundn *N_*___ *N_*___ *rs**** halt
 foundn *A_1___ *A_1___ *rr**** a2
 
 q2 *01**** *01**** *rl**** q2
@@ -76,18 +76,18 @@ q2 *81**** *81**** *rl**** q2
 q2 *91**** *91**** *rl**** q2
 q2 *A_**** *A_**** *rr**** a2
 
-q2 *0_**** *0_**** ******* halt-reject
-q2 *1_**** *1_**** ******* halt-reject
-q2 *2_**** *2_**** ******* halt-reject
-q2 *3_**** *3_**** ******* halt-reject
-q2 *4_**** *4_**** ******* halt-reject
-q2 *5_**** *5_**** ******* halt-reject
-q2 *6_**** *6_**** ******* halt-reject
-q2 *7_**** *7_**** ******* halt-reject
-q2 *8_**** *8_**** ******* halt-reject
-q2 *9_**** *9_**** ******* halt-reject
+q2 *0_**** *0_**** ******* halt
+q2 *1_**** *1_**** ******* halt
+q2 *2_**** *2_**** ******* halt
+q2 *3_**** *3_**** ******* halt
+q2 *4_**** *4_**** ******* halt
+q2 *5_**** *5_**** ******* halt
+q2 *6_**** *6_**** ******* halt
+q2 *7_**** *7_**** ******* halt
+q2 *8_**** *8_**** ******* halt
+q2 *9_**** *9_**** ******* halt
 
-q2 **1**** **1**** ******* halt-reject
+q2 **1**** **1**** ******* halt
 
 a2 *0*1*** *0*1*** *r*l*** a2
 a2 *1*1*** *1*1*** *r*l*** a2
@@ -104,28 +104,28 @@ a2 *R*_*** *R*_*** *r*r*** foundletter
 a2 *L*_*** *L*_*** *r*r*** foundletter
 a2 *S*_*** *S*_*** *r*r*** foundletter
 
-a2 *R*1*** *R*1*** *r*r*** halt-reject
-a2 *L*1*** *L*1*** *r*r*** halt-reject
-a2 *S*1*** *S*1*** *r*r*** halt-reject
+a2 *R*1*** *R*1*** *r*r*** halt
+a2 *L*1*** *L*1*** *r*r*** halt
+a2 *S*1*** *S*1*** *r*r*** halt
 
-a2 *0*_*** *0*_*** ******* halt-reject
-a2 *1*_*** *1*_*** ******* halt-reject
-a2 *2*_*** *2*_*** ******* halt-reject
-a2 *3*_*** *3*_*** ******* halt-reject
-a2 *4*_*** *4*_*** ******* halt-reject
-a2 *5*_*** *5*_*** ******* halt-reject
-a2 *6*_*** *6*_*** ******* halt-reject
-a2 *7*_*** *7*_*** ******* halt-reject
-a2 *8*_*** *8*_*** ******* halt-reject
-a2 *9*_*** *9*_*** ******* halt-reject
+a2 *0*_*** *0*_*** ******* halt
+a2 *1*_*** *1*_*** ******* halt
+a2 *2*_*** *2*_*** ******* halt
+a2 *3*_*** *3*_*** ******* halt
+a2 *4*_*** *4*_*** ******* halt
+a2 *5*_*** *5*_*** ******* halt
+a2 *6*_*** *6*_*** ******* halt
+a2 *7*_*** *7*_*** ******* halt
+a2 *8*_*** *8*_*** ******* halt
+a2 *9*_*** *9*_*** ******* halt
 
 a2 **_1*** **_1*** ******* reject
 
 foundletter *;***** *;***** *r***** restart
-foundletter ******* ******* ******* halt-reject
+foundletter ******* ******* ******* halt
 foundletter *_***** *_***** *l***** copyinput 
 
-restart ******* ******* ******* halt-reject
+restart ******* ******* ******* halt
 restart *Q***** *Q***** *r***** newq1
 
 newq1 *01**** *01**** *rr**** newq1
@@ -140,17 +140,17 @@ newq1 *81**** *81**** *rr**** newq1
 newq1 *91**** *91**** *rr**** newq1
 newq1 *A***** *A***** *rl**** newa1
 
-newq1 *0_**** *0_**** ******* halt-reject
-newq1 *1_**** *1_**** ******* halt-reject
-newq1 *2_**** *2_**** ******* halt-reject
-newq1 *3_**** *3_**** ******* halt-reject
-newq1 *4_**** *4_**** ******* halt-reject
-newq1 *5_**** *5_**** ******* halt-reject
-newq1 *6_**** *6_**** ******* halt-reject
-newq1 *7_**** *7_**** ******* halt-reject
-newq1 *8_**** *8_**** ******* halt-reject
-newq1 *9_**** *9_**** ******* halt-reject
-newq1 *A1**** *A1**** ******* halt-reject
+newq1 *0_**** *0_**** ******* halt
+newq1 *1_**** *1_**** ******* halt
+newq1 *2_**** *2_**** ******* halt
+newq1 *3_**** *3_**** ******* halt
+newq1 *4_**** *4_**** ******* halt
+newq1 *5_**** *5_**** ******* halt
+newq1 *6_**** *6_**** ******* halt
+newq1 *7_**** *7_**** ******* halt
+newq1 *8_**** *8_**** ******* halt
+newq1 *9_**** *9_**** ******* halt
+newq1 *A1**** *A1**** ******* halt
 
 newa1 *0*1*** *0*1*** *r*r*** newa1
 newa1 *1*1*** *1*1*** *r*r*** newa1
@@ -195,16 +195,16 @@ checkinput ***19** ***19** ***rl** checkinput
 checkinput ****_** ****_** ****r** bt2
 checkinput ***_A** ***_A** ***ll** bt1
 
-checkinput ***1A** ***1A** ******* halt-reject
-checkinput ***_0** ***_0** ******* halt-reject
-checkinput ***_1** ***_1** ******* halt-reject
-checkinput ***_2** ***_2** ******* halt-reject
-checkinput ***_3** ***_3** ******* halt-reject
-checkinput ***_4** ***_4** ******* halt-reject
-checkinput ***_5** ***_6** ******* halt-reject
-checkinput ***_7** ***_7** ******* halt-reject
-checkinput ***_8** ***_8** ******* halt-reject
-checkinput ***_9** ***_9** ******* halt-reject
+checkinput ***1A** ***1A** ******* halt
+checkinput ***_0** ***_0** ******* halt
+checkinput ***_1** ***_1** ******* halt
+checkinput ***_2** ***_2** ******* halt
+checkinput ***_3** ***_3** ******* halt
+checkinput ***_4** ***_4** ******* halt
+checkinput ***_5** ***_6** ******* halt
+checkinput ***_7** ***_7** ******* halt
+checkinput ***_8** ***_8** ******* halt
+checkinput ***_9** ***_9** ******* halt
 
 bt1 ***1*** ***1*** ***l*** bt1
 bt1 ***_*** ***_*** ***r*** checkinput
@@ -228,6 +228,7 @@ bt2 *S***** *S***** *l***** bt2
 bt2 *Y***** *Y***** *l***** bt2
 bt2 *N***** *N***** *l***** bt2
 bt2 *_***_* *_***Q* *r***r* copyQ0
+bt2 ****_** ****_** ******* halt
 
 copyQ0 **1**_* **1**0* **r**r* copyQ0
 copyQ0 **_**_* **_**_* **l**l* bt6
@@ -260,23 +261,28 @@ loopQ ******* ******* ******* advanceTrans
 loopQ *A**A_* *A**A_* *r**rl* verifyA
 loopQ *****_* *****_* *****l* bt6
 
-verifyA *0**0** *0**0** *r*rr** verifyA
-verifyA *1**1** *1**1** *r*rr** verifyA
-verifyA *2**2** *2**2** *r*rr** verifyA
-verifyA *3**3** *3**3** *r*rr** verifyA
-verifyA *4**4** *4**4** *r*rr** verifyA
-verifyA *5**5** *5**5** *r*rr** verifyA
-verifyA *6**6** *6**6** *r*rr** verifyA
-verifyA *7**7** *7**7** *r*rr** verifyA
-verifyA *8**8** *8**8** *r*rr** verifyA
-verifyA *9**9** *9**9** *r*rr** verifyA
+verifyA *0**0** *0**0** *r**r** verifyA
+verifyA *1**1** *1**1** *r**r** verifyA
+verifyA *2**2** *2**2** *r**r** verifyA
+verifyA *3**3** *3**3** *r**r** verifyA
+verifyA *4**4** *4**4** *r**r** verifyA
+verifyA *5**5** *5**5** *r**r** verifyA
+verifyA *6**6** *6**6** *r**r** verifyA
+verifyA *7**7** *7**7** *r**r** verifyA
+verifyA *8**8** *8**8** *r**r** verifyA
+verifyA *9**9** *9**9** *r**r** verifyA
 verifyA *A**A** *A**A** *r**r** verifyA
+
 
 
 verifyA ******* ******* ******* bt5
 verifyA *Q**_** *Q**_** *s**sl* bt6exclusive
 verifyA *Q**A** *Q**A** *s**sl* bt6exclusive
-verifyA *_***** *_***** ******* halt-reject
+verifyA *Y**_** *Y**_** *s**sl* bt6exclusive
+verifyA *Y**A** *Y**A** *s**sl* bt6exclusive
+verifyA *N**_** *N**_** *s**sl* bt6exclusive
+verifyA *N**A** *N**A** *s**sl* bt6exclusive
+verifyA *_***** *_***** ******* halt
 
 bt5 ***10** ***10** ***rl** bt5
 bt5 ***11** ***11** ***rl** bt5
@@ -288,11 +294,16 @@ bt5 ***16** ***16** ***rl** bt5
 bt5 ***17** ***17** ***rl** bt5
 bt5 ***18** ***18** ***rl** bt5
 bt5 ***19** ***19** ***rl** bt5
-bt5 ***_A** ***_A** ***ls** advanceTrans
+bt5 ***1Y** ***1Y** ***rl** bt5
+bt5 ***1N** ***1N** ***rl** bt5
+bt5 ***_A** ***_A** ***ls** bt4
+
+bt4 ***1*** ***1*** ***l*** bt4
+bt4 ***_*** ***_*** ***r*** advanceTrans
 
 advanceTrans *;***** *;***** *s***** bt6exclusive
 advanceTrans ******* ******* *r***** advanceTrans
-advanceTrans *_***** *_***** ******* halt-reject
+advanceTrans *_***** *_***** ******* halt
 
 writeNextQ *0***** *0***0* *r***r* writeNextQ
 writeNextQ *1***** *1***1* *r***r* writeNextQ
@@ -304,11 +315,15 @@ writeNextQ *6***** *6***6* *r***r* writeNextQ
 writeNextQ *7***** *7***7* *r***r* writeNextQ
 writeNextQ *8***** *8***8* *r***r* writeNextQ
 writeNextQ *9***** *9***9* *r***r* writeNextQ
+writeNextQ *Y***** *YY**Y* *rs**r* writeNextQ
+writeNextQ *N***** *NN**N* *rs**r* writeNextQ
 writeNextQ *A***** *A***** *s***** verifyA
-writeNextQ *A*_*_* *A*_*_A *r*l*sr writeNextA
+writeNextQ *A*1*_* *A*1*_A *r*s*sr writeNextA
  
 
 bt6exclusive *Q***Q* *Q***Q* *r***r* writeNextQ
+bt6exclusive *Y***Q* *Y***Y* *r***r* writeNextQ
+bt6exclusive *N***Q* *N***N* *r***r* writeNextQ
 bt6exclusive *;***Q* *;***Q* *r***s* loopQexclusive
 bt6exclusive *_***Q* *_***Q* *r***r* loopQexclusive
 bt6exclusive *****0* *****0* *****l* bt6exclusive
@@ -356,6 +371,11 @@ writeNextA *L***** *L***** *s***** moveLeft
 writeNextA *S***** *S***** *s***** moveStay
 
 moveRight  ******* ******* ******* bt2exclusive
+moveLeft   ******* ******* ******l bt7
+moveStay   ******* ******* ******l bt7
+
+bt2exclusive **Y**** ******* ******* halt-accept
+bt2exclusive **N**** ******* ******* halt-reject
 
 bt2exclusive *0***** *0***** *l***** bt2exclusive
 bt2exclusive *1***** *1***** *l***** bt2exclusive
@@ -376,3 +396,35 @@ bt2exclusive *S***** *S***** *l***** bt2exclusive
 bt2exclusive *Y***** *Y***** *l***** bt2exclusive
 bt2exclusive *N***** *N***** *l***** bt2exclusive
 bt2exclusive *_***_* *_***_* *s***l* bt6exclusive
+bt2exclusive ****_** ****_** ******* halt
+
+
+bt7 ******0 ******0 ******l bt7
+bt7 ******1 ******1 ******l bt7
+bt7 ******2 ******2 ******l bt7
+bt7 ******3 ******3 ******l bt7
+bt7 ******4 ******4 ******l bt7
+bt7 ******5 ******5 ******l bt7
+bt7 ******6 ******6 ******l bt7
+bt7 ******7 ******7 ******l bt7
+bt7 ******8 ******8 ******l bt7
+bt7 ******9 ******9 ******l bt7
+bt7 ******A ******A ******l bt7_ii
+bt7 *S****A *S****A ******s bt4exclusive
+
+bt7_ii ***1**_ ***1**_ ***r**l bt7_ii
+bt7_ii ******0 ******0 ******l bt7_ii
+bt7_ii ******1 ******1 ******l bt7_ii
+bt7_ii ******2 ******2 ******l bt7_ii
+bt7_ii ******3 ******3 ******l bt7_ii
+bt7_ii ******4 ******4 ******l bt7_ii
+bt7_ii ******5 ******5 ******l bt7_ii
+bt7_ii ******6 ******6 ******l bt7_ii
+bt7_ii ******7 ******7 ******l bt7_ii
+bt7_ii ******8 ******8 ******l bt7_ii
+bt7_ii ******9 ******9 ******l bt7_ii
+bt7_ii ******A ******A ***l**s bt4exclusive
+bt7_ii ******* ******* ***l*** bt4exclusive
+
+bt4exclusive ***1*** ***1*** ***l*** bt4exclusive
+bt4exclusive ***_*** ***_*** ***r*** bt2exclusive
