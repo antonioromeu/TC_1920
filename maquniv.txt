@@ -374,8 +374,8 @@ moveRight  ******* ******* ******* bt2exclusive
 moveLeft   ******* ******* ******l bt7
 moveStay   ******* ******* ******l bt7
 
-bt2exclusive **Y**** ******* ******* halt-accept
-bt2exclusive **N**** ******* ******* halt-reject
+bt2exclusive **Y**_* ******* ******* halt-accept
+bt2exclusive **N**_* ******* ******* halt-reject
 
 bt2exclusive *0***** *0***** *l***** bt2exclusive
 bt2exclusive *1***** *1***** *l***** bt2exclusive
@@ -395,8 +395,8 @@ bt2exclusive *L***** *L***** *l***** bt2exclusive
 bt2exclusive *S***** *S***** *l***** bt2exclusive
 bt2exclusive *Y***** *Y***** *l***** bt2exclusive
 bt2exclusive *N***** *N***** *l***** bt2exclusive
-bt2exclusive *_***_* *_***_* *s***l* bt6exclusive
-bt2exclusive ****_** ****_** ******* halt
+bt2exclusive *_1**_* *_1**_* *s***l* bt6exclusive
+bt2exclusive **1*_** **1*_** ******* halt
 
 
 bt7 ******0 ******0 ******l bt7
